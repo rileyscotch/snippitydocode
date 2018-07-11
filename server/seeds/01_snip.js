@@ -22,7 +22,7 @@ const snipSeed = [
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex.raw('DELETE FROM "snip"; ALTER SEQUENCE snip_id_seq RESTART WITH 4;')
+  return knex('snip').del()
     .then(function () {
       // Inserts seed entries
       return knex('snip').insert(snipSeed);
