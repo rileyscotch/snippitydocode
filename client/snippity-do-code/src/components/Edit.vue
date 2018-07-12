@@ -1,5 +1,5 @@
 <template lang="html">
-  <SnipForm :snip="snip" :onSubmit="submit"></SnipForm>
+  <SnipForm :snip="snip[0]" :onSubmit="submit"></SnipForm>
 </template>
 
 <script>
@@ -11,12 +11,7 @@ export default {
   },
   data() {
     return {
-      snip: {
-        title: '',
-        language: '',
-        description: '',
-        url: '',
-      },
+      snip: {},
     };
   },
   mounted() {
@@ -31,13 +26,13 @@ export default {
         });
     },
     submit() {
-      this.snip.quantity = Number(this.snip.quantity);
-      API.updateSnip(this.snip.id, this.snip)
+        console.log(this.snip[0])
+      API.updateSnip(this.snip[0].id, this.snip[0])
         .then(() => {
           this.$router.push({
-            name: 'snip',
+            name: 'Snips',
             params: {
-              id: this.snip.id,
+              id: this.snip[0].id,
             },
           });
         });

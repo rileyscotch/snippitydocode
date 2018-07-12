@@ -6,13 +6,11 @@
           height="1000px"
           width="1000px"
         ></v-card-media>
-
         <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">{{snip.title}}</h3>
-            <h2>{{snip.language}}</h2>
-            <div>{{snip.description}}</div>
-            <small>{{snip.url}}</small>
+            <h3 class="headline mb-0">{{snip[0].title}}</h3>
+            <h2>{{snip[0].language}}</h2>
+            <div>{{snip[0].description}}</div>
           </div>
         </v-card-title>
 
@@ -21,7 +19,7 @@
             :to="{
                 name: 'Edit',
                 params: {
-                  id: snip.id
+                  id: snip[0].id
                 }
             }"
             color="green">Edit</v-btn>
@@ -47,11 +45,14 @@ export default {
   mounted() {
     const { id } = this.$route.params;
     this.load(id);
+    console.log(id)
+
   },
   methods: {
     load(id) {
       API.getExample(id).then((snip) => {
         this.snip = snip;
+        console.log(this.snip)
       });
     },
     deleteSnip() {

@@ -18,7 +18,6 @@
           v-model="snip.description"
           multi-line
         ></v-textarea>
-        
         <v-textarea
           label="Url"
           v-model="snip.url"
@@ -42,12 +41,6 @@ export default {
           return true;
         }
       ],
-      descriptionRules: [
-        description => {
-          if (description.trim() === "") return "Description must not be empty.";
-          return true;
-        }
-      ]
     };
   },
   methods: {
