@@ -2,9 +2,9 @@
    <v-layout row wrap>
     <v-flex xs4 v-for="snip in snips" :key="snip.id">
       <v-card>
-        <v-card-media
+        <!-- <v-card-media
           height="200px"
-        ></v-card-media>
+        ></v-card-media> -->
 
         <v-card-title primary-title>
           <div>

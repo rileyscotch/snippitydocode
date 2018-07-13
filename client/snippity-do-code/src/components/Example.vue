@@ -1,11 +1,7 @@
 <template lang="html">
-    <v-layout row wrap>
-    <v-flex xs12>
+    <v-layout row wrap align-center justify-center>
+    <v-flex xs6>
       <v-card>
-        <v-card-media
-          height="1000px"
-          width="1000px"
-        ></v-card-media>
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">{{snip[0].title}}</h3>
@@ -24,7 +20,7 @@
             }"
             color="green">Edit</v-btn>
             <v-btn flat @click="deleteSnip()" color="error">Delete</v-btn>
-          <v-btn flat color="blue" :href="snip.url" target="_blank">View Docs</v-btn>
+          <v-btn flat color="blue" :href="snip[0].url" target="_blank">View Docs</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>

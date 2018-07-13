@@ -23,13 +23,24 @@ router.get("/:id", isValidId, (request, response, next) => {
   queries
     .read(request.params.id)
     .then(snip => {
-        if(snip) {
-       response.json(snip);
+        if(snip) { 
+        response.json(snip);
         } else {
             next()
         }
     })
 });
+
+// router.get('/:id', (request, response, next) => {
+//     queries.read(request.params.id)
+//         .then(snip => {
+//             if (snip) {
+//                 return response.json(snip)
+//             } else {
+//                 next()
+//             }
+//         })
+// })
 
 router.post("/", (request, response, next) => {
     if(validSnip(request.body)) {

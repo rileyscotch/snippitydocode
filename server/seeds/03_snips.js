@@ -1,30 +1,30 @@
 const snipSeed = [
-  {id: 1, 
+  {
     title: '.gitignore',
-    language: 'Github',
     description: 'Keep your unwanted files from pushing to Github!',
-    url: 'https://git-scm.com/docs/gitignore'
+    url: 'https://git-scm.com/docs/gitignore',
+    language_id: 1,
   },
-  {id: 2, 
+  {
     title: 'React Fragment',
-    language: 'React',
     description: 'The Div of React, makes a great parent element that is completely empty and useless',
-    url: 'https://reactjs.org/docs/fragments.html'
+    url: 'https://reactjs.org/docs/fragments.html',
+    language_id: 2,
+
   },
-  {id: 3, 
+  {
     title: 'NPM FUN',
-    language: 'NPM',
     description: 'So Much Fun',
-    url: 'https://www.npmjs.com/package/npm-fun'
+    url: 'https://www.npmjs.com/package/npm-fun',
+    language_id: 3,
+
   }
 ]
 
 
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
   return knex('snip').del()
     .then(function () {
-      // Inserts seed entries
       return knex('snip').insert(snipSeed);
     });
 };
